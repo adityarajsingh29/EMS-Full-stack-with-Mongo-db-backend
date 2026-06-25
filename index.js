@@ -1,5 +1,5 @@
 const express = require("express");
-
+const cors = require("cors");
 const app = express();
 
 const employeeRoutes = require("./routes/employeeRoutes");
@@ -10,7 +10,7 @@ const loggerMiddleware = require("./middleware/loggerMiddleware");
 // Middleware
 
 app.use(express.json());
-
+app.use(cors());
 app.use(loggerMiddleware);
 
 
@@ -26,8 +26,8 @@ app.get("/", (req, res) => {
 });
 
 
-app.listen(4000, () => {
+app.listen(5100, () => {
 
-  console.log("Server Running on Port 4000");
+  console.log("Server Running on Port 5100");
 
 });
